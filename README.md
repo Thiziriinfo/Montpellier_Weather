@@ -9,7 +9,7 @@ flowchart TD
     A[carte Montpellier ] --> B[Température ]
     B --> D[Temp Hautes]
     B --> E[Temp Basses]
-    B --> E[Moy_vent ]
+    B --> C[Moy_vent ]
 
     E --> G[carte Méteo ]
     D --> G
