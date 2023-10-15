@@ -44,7 +44,7 @@ gantt
         Beamer : after a3, 5d
 ```
 
- Cette partie consiste à créer une carte graphique affichant la température d'une journée dans la ville de Montpellier en suivant differentes étapes : 
+ Cette partie consiste à créer une carte graphique affichant la température d'une journée dans la ville de Montpellier en suivant differentes étapes  
 
 
 
