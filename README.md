@@ -26,6 +26,24 @@ flowchart TD
 
  ### Visualisation  
 
+
+
+
+ ```mermaid
+gantt
+    title Montpellier_weather
+    dateFormat YYYY-MM-DD
+    section Phase 1
+        Brainstrorming 1 :a1, 2023-10-10, 10d
+        Brainstorming 2  :after a1, 10d
+        Snpashot : 2023-10-22
+    section Development
+        filtrage des données  : a2, 2023-10-22, 10d
+        Visualiation   : 2023-11-01, 10d
+        Documentation : a3, after a2 , 5d
+        Beamer : after a3, 5d
+```
+
  Cette partie consiste à créer une carte graphique affichant la température d'une journée dans la ville de Montpellier en suivant differentes étapes : 
 
 
