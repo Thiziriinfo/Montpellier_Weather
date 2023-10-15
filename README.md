@@ -13,7 +13,7 @@ flowchart TD
 
     E --> G[carte Méteo ]
     D --> G
-    D --> C
+    C --> G
 ```
  Cette carte se met à jour automatiquement et accessible avec l'URL ... 
 
