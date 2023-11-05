@@ -44,7 +44,7 @@ gantt
         Beamer : after a3, 5d
 ```
 
- Cette partie consiste à créer une carte graphique affichant la température d'une journée dans la ville de Montpellier en suivant differentes étapes  
+ Cette partie consiste à créer une carte graphique affichant la température d'une journée dans la ville de Montpellier qui vise à développer une application météo dédiée à la ville de Montpellier, en France. L'application fournira des informations météorologiques en temps réel et des prévisions pour les résidents et les visiteurs de Montpellier. Elle permettra aux utilisateurs de surveiller les conditions météorologiques actuelles, de consulter des prévisions à court et à long terme, et d'obtenir des informations utiles sur le climat local. 
 
 
 
