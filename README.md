@@ -2,7 +2,7 @@
 
 ## But et Données 
 
-l'Objectif de ce projet est de créer une application Web de prévision météo Pour la ville de Montpellier  dans laquelle , on pourra afficher principalement les températures hautes et basses , suivie de la moyenne du vent et la quantité de précipitation du vent 
+l'Objectif de ce projet est de créer un site Web de prévision météo Pour la ville de Montpellier  dans laquelle , on pourra afficher principalement les températures hautes et basses , suivie de la moyenne du vent et la quantité de précipitation du vent pour les prochains cinq jours. 
 
 ```mermaid
 flowchart TD
@@ -22,7 +22,8 @@ flowchart TD
 
  ### Traitement des données 
 
- Dans cette première partie du travail  je vais impérativement analyser , filtrer et organiser les données de manière à ce que notre dataframe soit soit utilisable , et ceci pour se faire à l'aide des packages suivants : pandas , numpy , scipy .
+ Dans un premier temps, nous récoltons les données depuis le site www.openmeteo.fr. Ce dernier te permet d'utiliser les donées sans clefs Api et à l'aide de la librairie (requests) nous obteneons  facilement les données.
+ Ensuite  je vais impérativement analyser , filtrer et organiser les données de manière à ce que notre dataframe  soit utilisable .
 
  ### Visualisation  
 
@@ -44,7 +45,7 @@ gantt
         Beamer : after a3, 5d
 ```
 
- Cette partie consiste à créer une carte graphique affichant la température d'une journée dans la ville de Montpellier qui vise à développer une application météo dédiée à la ville de Montpellier, en France. L'application fournira des informations météorologiques en temps réel et des prévisions pour les résidents et les visiteurs de Montpellier. Elle permettra aux utilisateurs de surveiller les conditions météorologiques actuelles, de consulter des prévisions à court et à long terme, et d'obtenir des informations utiles sur le climat local. 
+ 
 
 
 
