@@ -1,0 +1,19 @@
+project:
+  type: website
+  render:
+    - index.qmd
+
+website:
+  title: "Météo Montpellier"
+  site-url: https://Thiziriinfo.github.io/
+  repo-url: https://github.com/Thiziriinfo/Thiziriinfo.github.io
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
