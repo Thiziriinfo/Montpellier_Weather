@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Montpellier Weather</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-rows: auto 1fr;
+        }
+
+        .title {
+            padding: 10px;
+            font-size: 24px;
+            background-color: #8e44ad; /* Bleu violet */
+            color: white;
+            text-align: center;
+        }
+
+        .weather-cards {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+
+        .weather-card {
+            border: 2px solid white;
+            padding: 10px;
+            background-color: rgba(104, 106, 114, 0.07);
+            text-align: center;
+        }
+
+        .day {
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #bdc3c7; /* Gris clair */
+            padding: 5px;
+        }
+
+        .emoji {
+            font-size: 24px;
+            background-color: #3498db; /* Bleu clair */
+            color: white;
+            padding: 5px;
+        }
+
+        .temperature {
+            margin-top: 5px;
+            background-color: #5d6d7e; /* Bleu clair moins foncé */
+            padding: 5px;
+        }
+
+        .wind,
+        .precipitation {
+            margin-top: 5px;
+            background-color: #f39c12; /* Couleur de votre choix (clair) */
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="title">Montpellier Weather</div>
+        <div class="weather-cards">
+            <!-- Les cartes météo seront générées ici -->
+            <?php
+            $days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+            foreach ($days as $day) {
+            ?>
+                <div class="weather-card">
+                    <div class="day"><?= $day ?></div>
+                    <div class="emoji">☀️</div>
+                    <div class="temperature">High: 25°C | Low: 15°C</div>
+                    <div class="wind">Wind: 10 km/h</div>
+                    <div class="precipitation">Precipitation: 5%</div>
+                </div>
+            <?php
+            }
+            ?>
+            <!-- Fin de la génération des cartes météo -->
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+<!-- jour 03-->
+<div id="day3" class="tab    ">
+    <a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=3" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=3" data-day="3">
+        <div class="tab-content">…</div>
+    </a>
+ </div>
+
+
+ <!-- le jour 2-->
+
+ <div id="day2" class="tab tab-after-active">
+    <a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=2" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=2">
+    
+
+     <div class="tab-content">
+         <time datetime="2023-11-14" class="date"> 
+         <div class="tab-day-short"> Mar </div>
+         </time>
+        <div class="weather day">
+            <div class="weather-pictogram-wrapper day">
+                 <img class="weather-pictogram" src="">
+            </div>flex
+        </div>
+       <div class="temps">
+         <div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"> 23&nbsp;°C </div>
+         <div class="tab-temp-min" title="Température minimale" style="background-color: #79D030; color: #000000"> 14&nbsp;°C </div>
+       </div>
+       <div class="data">
+          <div class="wind" title="Vitesse du vent">flex
+             <span class="glyph winddir W">
+                ::before
+             </span>
+             " 26 km/h "
+           </div>
+         <div title="Quantité de précipitations" class="tab-precip dry">flex
+              <span class="glyph rain"></span>
+               " - "
+            </div>
+        </div>
+      </a>  
+    </div>
+ </div>  

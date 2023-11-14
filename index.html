@@ -1,58 +1,532 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Votre titre</title>
-    <style>
-        /* Styles CSS */
-        body {
-            background-image: url('montpellier-place-comedie_0.jpg'); 
+    <head>
+          <meta charset="UTF-8">
+            <title>Montpellier_Weather</title>
+        <style>
+           body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(73, 16, 127);
             background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            font-family: Arial, sans-serif;
-            color: #333;
-        }
-
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
+            background-position: center;
             display: flex;
-            justify-content: space-between;
-        }
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            }
 
-        .day-column {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 10px;
-            width: 24%;
+         .header_lower {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
             text-align: center;
-            transition: background-color 0.2s;
-        }
+         }
 
-        .day-column:hover {
-            background-color: #eee;
-        }
+         h1.main-heading {
+            margin: 0;
+         }
 
-        img {
+         .main {
+            box-sizing: border-box;
+            padding: 0 330px 3em 0;
+            width: 100%;
+            display: flex;
+         }
+
+         .grid {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin-bottom: .5em;
+            padding-bottom: 1em;
+            justify-content: center;
+            align-items: center;
+         }
+
+         .tab-results {
+            margin-top: 0;
+            width: 100%;
+            display: flex;
+         }
+
+         .tab-wrapper {
+            box-sizing: border-box;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+         }
+
+         .tab.active  {
+            border: 3px solid #124673;
+            border-radius: 10px ;
+            background: #f8f8f8;
+            width : 14%;
+         }
+
+         .tab.tab-after-active {
+            border-bottom-left-radius: 10px;
+            border-left: 3px solid #124673;
+         }
+
+         .tab {
+          background: #ebebeb;
+          box-sizing: border-box;
+          display: flex;
+          position: relative;
+          transition: .1s;
+          vertical-align: top;
+          /*width: 14.28571429%;*/
+          flex-grow: 1;
+          /*border-right: 3px solid #124673; 
+          margin-right: 10px;*/ 
+          }
+
+         .tab a {
+          text-decoration: none;
+          
+         }
+         .tab-wrapper a {
+           color: #231f20;
+           
+         }   
+         a {
+         color: #124673;
+         outline: none;
+         transition: .1s;
+         display: flex;
+         }
+          
+         .tab-content {
+            margin-top: 5px;
+            text-align: center;
+            
+         }
+         .tab-results .inline-help-icons {
+            
+            position: absolute;
+            right: 5px;
+            top: 0;
+         }
+
+         .glyph {
+            direction: ltr;
+         }
+
+         .tab-content .date,.tab-content div {
+            line-height: 1.1em;
+            padding: .1em 0;
+         }
+
+         .tab-day-short {
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding-bottom: 0;
+         }
+
+         .tab.active .tab-content .weather {
+            border-left: 0;
+         }
+
+         .tab-content .weather.day {
+            background: #88b7df;
+         }
+
+         .tab-content .weather {
+            border-left: 1px solid #b2cbe6;
+            direction: ltr;
+            line-height: 1;
+            position: relative;
+         }
+
+         .tab-content .weather-pictogram-wrapper.day {
+            background: #88b7df;
+         }
+
+         .tab-content .weather-pictogram-wrapper {
+            /*align-items: center;*/
+            
+            align-self: center;
+            /*border-radius: 100%;*/
+            box-sizing: border-box;
+            display: flex;
+            height: 75px;
+            justify-content: center;
+            margin: 0 auto;
             width: 100px;
-            height: 100px;
-        }
-    </style>
-</head>
+         }
 
-<body>
-    <div class="container">
-        <!-- Votre contenu ira ici -->
-    </div>
+         img {
+            overflow: clip;
+         } 
+         .tab-content .weather-pictogram-wrapper-second .weather-pictogram {
+         width: 38px;
+         }
 
-    <script>
-        // Votre code JavaScript ira ici
-    </script>
-</body>
+         .tab-content .temps {
+         filter: saturate(.8);
+          padding-top: 0;
+         }
+         .tab-content .tab-temp-max {
+         border-radius: 5px;
+         color: transparent;
+         font-size: .9rem;
+         line-height: 1.4em;
+         margin: 5px auto;
+         width: 50px;
+         }
+         .tab-content .tab-temp-min {
+          border-radius: 5px;
+          color: transparent;
+          font-size: .9rem;
+          line-height: 1.4em;
+          margin: 5px auto;
+          width: 50px;
+         }
+         .tab-content .data {
+         display: inline-block;
+         }
+         .tab-content .wind {
+         align-items: center;
+         border-radius: 5px;
+         display: flex;
+         height: 1.3em;
+         justify-content: center;
+         line-height: 1.4em;
+         margin: 0 auto 5px;
+         padding: 0 5px;
+         white-space: nowrap;
+         }
+         .tab-content .data .glyph {
+         min-width: 15px;
+         }
+         .wind .winddir {
+         margin-right: 4px;
+         margin-top: 2px;
+         }
+         .glyph {
+         direction: ltr;
+         }
+         .tab-content .tab-precip {
+         align-items: center;
+         border-radius: 5px;
+         display: flex;
+         height: 1.3em;
+         justify-content: center;
+         line-height: 1.4em;
+         margin: 0 auto 5px;
+         padding: 0 5px;
+         white-space: nowrap;
+         }
+         .tab-precip .rain {
+         color: #0f8eb4;
+         margin-right: 3px;
+         margin-top: 3px;
+         }
+
+        </style>
+    </head>
+
+     <body>
+     <!-- Le contenu de l'en-tête -->
+     <div class="header_lower">
+        <header>
+            <h1 itemprop="name" content="Montpellier" class="main-heading">Montpellier Météo</h1>
+        </header>
+     </div>
+
+     <!-- Affichage pour les 5 jours -->
+        <main class="main">
+            <div class="grid">
+                <div id="tab_results" class="tab-results">
+                  <div id="tab_wrapper" class="tab-wrapper">
+
+                       <!--day 01-->
+                       <div id="day1" class="tab active first ">
+                             <a href="/fr/meteo/semaine/montpellier_france_2992166?day=1" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=1" data-day="1">
+                             
+                              <!-- contenu du tableau-->
+                             <div class="tab-content">
+                                <div id="inline_help" class="inline-help-icons">
+                                    <span class="glyph help-solid"></span>
+                                 </div>
+                                 <time datetime="2023-11-13" class="date">
+                                      <div class="tab-day-short">Lundi</div>
+                                 </time>
+                                 <div class="weather-pictogram-wrapper day">
+                                    <img class="weather-pictogram-wrapper day" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg">
+                                 </div>flex
+                            
+                                 <div class="temps">
+                                     <div class="tab-temp-max" title="Température maximale" style="background-color: #D8F7A1; color: #000000"> 19&nbsp;°C </div>
+                                     <div class="tab-temp-min" title="Température minimale" style="background-color: #3CA12C; color: #FFFFFF"> 13&nbsp;°C </div>
+                                    </div>
+                         
+                                 <div class="data">
+                                      <div class="wind" title="Vitesse du vent">flex
+                                           <span class="glyph winddir W">
+                                               ::before
+                                           </span>
+                                     </div>
+                                       <div title="Quantité de précipitations" class="tab-precip">flex
+                                             <span class="glyph rain">
+                                              
+                                                " - "
+                                            </span>
+                                        </div>
+                                  </div>
+                             </div>
+                          </a>
+                       </div>
+                       
+                       <!-- Jour 02-->
+
+                       <div id="day2" class="tab ">
+                           <a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=2" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=2">
+                             <div class="tab-content">
+                                    <div id="inline_help" class="inline-help-icons">
+                                     <span class="glyph help-solid"></span>
+                                     </div>
+                                 <time datetime="2023-11-14" class="date"> 
+                                     <div class="tab-day-short"> Mardi </div>
+                                 </time>
+                                 <div class="weather day">
+                                    <div class="weather-pictogram-wrapper day">
+                                        <img class="weather-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg">
+                                    </div>flex
+                                 </div>
+                                 <div class="temps">
+                                     <div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"> 23&nbsp;°C </div>
+                                     <div class="tab-temp-min" title="Température minimale" style="background-color: #79D030; color: #000000"> 14&nbsp;°C </div>
+                                 </div>
+                                 <div class="data">
+                                      <div class="wind" title="Vitesse du vent">flex
+                                          <span class="glyph winddir W">
+                                             ::before
+                                         </span>
+                                              " 26 km/h "
+                                       </div>
+                                       <div title="Quantité de précipitations" class="tab-precip dry">flex
+                                           <span class="glyph rain"></span>
+                                               " - "
+                                       </div>
+                                  </div>
+                              </div>
+                            </a>
+                     </div>  
+                     
+                              <!-- Jour 03-->
+
+                       <div id="day3"  class="tab    tab-before-active"  >
+                        <a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=3" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=3">
+                          <div class="tab-content">
+                                 <div id="inline_help" class="inline-help-icons">
+                                  <span class="glyph help-solid"></span>
+                                  </div>
+                              <time datetime="2023-11-15" class="date"> 
+                                  <div class="tab-day-short"> Mercredi </div>
+                              </time>
+                              <div class="weather day">
+                                    <div class="weather-pictogram-wrapper day">
+                                        <img class="weather-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg">
+                                    </div>flex
+                              </div>
+                              <div class="temps">
+                                  <div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"> 23&nbsp;°C </div>
+                                  <div class="tab-temp-min" title="Température minimale" style="background-color: #79D030; color: #000000"> 14&nbsp;°C </div>
+                              </div>
+                              <div class="data">
+                                   <div class="wind" title="Vitesse du vent">flex
+                                       <span class="glyph winddir W">
+                                          ::before
+                                      </span>
+                                           " 26 km/h "
+                                    </div>
+                                    <div title="Quantité de précipitations" class="tab-precip dry">flex
+                                        <span class="glyph rain"></span>
+                                            " - "
+                                      </div>
+                                   </div>
+                               </div>
+                            </a>
+                     </div>  
+                                
+                     
+                                   <!-- Jour 04-->
+
+                       <div id="day4" classe="tab active active-mobile"  >
+                            <a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=4" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=4">
+                              <div class="tab-content">
+                                     <div id="inline_help" class="inline-help-icons">
+                                         <span class="glyph help-solid"></span>
+                                    </div>
+                                 <time datetime="2023-11-16" class="date"> 
+                                     <div class="tab-day-short"> jeudi </div>
+                                 </time>
+                                  <div class="weather day">
+                                        <div class="weather-pictogram-wrapper day">
+                                          <img class="weather-pictogram" src="">
+                                        </div>flex
+                                  </div>
+                              <div class="temps">
+                                  <div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"> 23&nbsp;°C </div>
+                                  <div class="tab-temp-min" title="Température minimale" style="background-color: #79D030; color: #000000"> 14&nbsp;°C </div>
+                              </div>
+                              <div class="data">
+                                   <div class="wind" title="Vitesse du vent">flex
+                                       <span class="glyph winddir W">
+                                          ::before
+                                      </span>
+                                           " 26 km/h "
+                                    </div>
+                                    <div title="Quantité de précipitations" class="tab-precip dry">flex
+                                        <span class="glyph rain"></span>
+                                            " - "
+                                      </div>
+                                   </div>
+                               </div>
+                            </a>
+                        </div>
+                     
+                        <!-- jour 5-->
+                       
+
+                     <div id="day2" class="tab   tab-after-active   ">
+                        <a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=5" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=5">
+                            <div class="tab-content">
+                                  <div id="inline_help" class="inline-help-icons">
+                                     <span class="glyph help-solid"></span>
+                                  </div>
+                             <time datetime="2023-11-17" class="date"> 
+                                  <div class="tab-day-short"> vendredi </div>
+                              </time>
+                             <div class="weather day">
+                                  <div class="weather-pictogram-wrapper day">
+                                      <img class="weather-pictogram" src="">
+                                  </div>flex
+                             </div>
+                             <div class="temps">
+                                <div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"> 23&nbsp;°C </div>
+                                <div class="tab-temp-min" title="Température minimale" style="background-color: #79D030; color: #000000"> 14&nbsp;°C </div>
+                             </div>
+                             <div class="data">
+                                 <div class="wind" title="Vitesse du vent">flex
+                                     <span class="glyph winddir W">
+                                        ::before
+                                     </span>
+                                         " 26 km/h "
+                                  </div>
+                                  <div title="Quantité de précipitations" class="tab-precip dry">flex
+                                      <span class="glyph rain"></span>
+                                          " - "
+                                    </div>
+                                 </div>
+                             </div>
+                          </a>
+                      </div
+
+
+
+
+                  
+
+
+
+
+                     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     </div>
+                </div>
+            </div>
+        </main>
+    </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="tab-content"></div>
+
+
+
+
+
+
+
+
+
+
+
 
 
