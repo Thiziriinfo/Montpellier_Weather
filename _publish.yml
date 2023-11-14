@@ -1,5 +1,3 @@
-output:
-  target: gh-pages
 project:
   type: website
   render:
