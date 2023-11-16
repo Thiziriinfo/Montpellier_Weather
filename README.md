@@ -6,14 +6,16 @@ l'Objectif de ce projet est de créer un site Web de prévision météorologique
 
 ```mermaid
 flowchart TD
-    A[carte Montpellier ] --> B[Température ]
+    A[Donnée API ] --> B[Température ]
     B --> D[Temp Hautes]
     B --> E[Temp Basses]
-    B --> C[Moy_vent ]
+    A --> C[Moy_vent ]
+    A -->F[Précipitations]
 
     E --> G[SiteWeb ]
     D --> G
     C --> G
+    F -- >G
 ```
  le site web est visible dans ce lien .... 
  ## Aperçu du site web 
