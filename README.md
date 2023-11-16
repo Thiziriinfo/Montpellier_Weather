@@ -35,14 +35,17 @@ A l'aide d'HTML, CSS, et JavaScript, en utilisant Visual Studio Code comme envir
 Les données météorologiques sont obtenues en temps réel à partir de l'API Open-Meteo. qui sont traitées et organisée sous Python ,puis l'appel au JavaScript et l'outil Fetch pour récupérer les informations sur la température maximale, minimale, les précipitations et la vitesse du vent.
 
 ## Personnalisation visuelle :
-Chaque jour de la semaine est représenté visuellement avec un pictogramme météo, et la direction du vent est illustrée par une flèche. Ceci se fait essentiellement dans le corps du html , mais en ajoutant le style des classes,La palette de couleurs dans le fichier CSS.
+Chaque jour de la semaine est représenté visuellement avec une date du "jour" suivie d'une date format "jj/mm/aa" ,un pictogramme météo,es températures haute et basses et la direction du vent qui est illustrée par icone "flèche", et enfin quantité de précipitations qui est illustrée par emoji "goute". Ceci se fait essentiellement dans le corps du html , mais en ajoutant le style des classes,La palette de couleurs dans le fichier CSS.
 
 ## Source 
 
--Pour la réalisation du html et du style, je me suis principalement inspirée du sitweb :https://www.meteoblue.com/fr/meteo/semaine/montpellier_france_2992166
--Pour la documentation sur développement des sites Web : https://developer.mozilla.org/en-US/docs/Web
--Vidéo Youtube pour la bonne compréhension des fonctionnement HTML : https://www.youtube.com/watch?v=G3e-cpL7ofc&t=7656s
--Le déploiement, l'automatisation du siteweb : https://quarto.org/docs/publishing/github-pages.html
+- Pour la réalisation du html et du style, je me suis principalement inspirée du sitweb :https://www.meteoblue.com/fr/meteo/semaine/montpellier_france_2992166
+
+- Pour la documentation sur développement des sites Web : https://developer.mozilla.org/en-US/docs/Web
+
+- Vidéo Youtube pour la bonne compréhension des fonctionnement HTML : https://www.youtube.com/watch?v=G3e-cpL7ofc&t=7656s
+
+- Le déploiement, l'automatisation du siteweb : https://quarto.org/docs/publishing/github-pages.html
 
 ## Contact 
 Thiziriinfo :thiziri.abchiche@etu.umontpellier.fr
