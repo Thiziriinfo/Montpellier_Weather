@@ -1,7 +1,7 @@
 project:
   type: website
-  render:
-    - index.html
+  output-dir: docs
+    
 
 website:
   title: " Montpellier_Weather"
@@ -9,7 +9,7 @@ website:
   repo-url: https://github.com/Thiziriinfo/Thiziriinfo.github.io
   navbar:
     left:
-      - href: index.html
+      - href: index.qmd
         text: Home
 
 format:
