@@ -1,7 +1,7 @@
 project:
   type: website
-  render:
-    - index.html
+  output-dir: docs
+    
 
 website:
   title: " Montpellier_Weather"
