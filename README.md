@@ -20,6 +20,7 @@ flowchart TD
 ```
  le site web est visible dans ce lien .... 
  ## Aperçu du site web 
+ (![Voici l'affichage de mon siteWeb Meteo](IMG/Images/MONT_meteo.PNG))
 
  ## Methodologie 
 
