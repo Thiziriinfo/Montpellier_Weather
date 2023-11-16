@@ -1,4 +1,5 @@
 import requests
+import json 
 
 # Importer les données
 url = "https://api.open-meteo.com/v1/meteofrance?latitude=43.6109&longitude=3.8763&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max"
