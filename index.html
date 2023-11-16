@@ -3,12 +3,18 @@
 
     <head>
           <meta charset="UTF-8">
-            <title>Montpellier_Weather</title>
-        <style>
-           body {
+          <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--commande pour les icones -->
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Météo_Montpellier</title>
+
+          
+
+       <style>
+          body {
             margin: 0;
             padding: 0;
             background-color: rgb(73, 16, 127);
+            background-image: url('IMG/Images/shutterstock_240459751.webp');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -17,28 +23,31 @@
             justify-content: center;
             color: white;
             font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
 
-         .header_lower {
-            background-color: #333;
+          .header_lower {
+            background-color: bleuviolet ;
             color: #fff;
             padding: 20px;
             width: 100%;
             text-align: center;
-         }
+          }
 
-         h1.main-heading {
+          h1.main-heading {
             margin: 0;
-         }
+          }
+         
+         
+          .ad1 {
+          height: 100px;
+          width: 100%;
+          background-color: #124673;
+          }
+         
 
-         .main {
-            box-sizing: border-box;
-            padding: 0 330px 3em 0;
-            width: 100%;
-            display: flex;
-         }
-
-         .grid {
+         
+          .grid {
             display: flex;
             flex-wrap: wrap;
             width: 100%;
@@ -46,207 +55,251 @@
             padding-bottom: 1em;
             justify-content: center;
             align-items: center;
+            background-color: rgb(210, 208, 204);
+         
          }
-
-         .tab-results {
+          .tab-results {
             margin-top: 0;
             width: 100%;
             display: flex;
-         }
+            align-items: center;
+          }
 
-         .tab-wrapper {
+          .tab-wrapper {
             box-sizing: border-box;
             display: flex;
             flex-wrap: wrap;
             width: 100%;
-         }
+          }
 
-         .tab.active  {
-            border: 3px solid #124673;
-            border-radius: 10px ;
-            background: #f8f8f8;
-            width : 14%;
-         }
-
-         .tab.tab-after-active {
-            border-bottom-left-radius: 10px;
-            border-left: 3px solid #124673;
-         }
-
-         .tab {
+          .tab {
           background: #ebebeb;
           box-sizing: border-box;
           display: flex;
           position: relative;
           transition: .1s;
           vertical-align: top;
-          /*width: 14.28571429%;*/
+          width: 25%;
           flex-grow: 1;
-          /*border-right: 3px solid #124673; 
-          margin-right: 10px;*/ 
+          border-bottom: 1px solid #ccc;
+          border-right: 3px solid #124673; 
+          
           }
-
-         .tab a {
+          
+          .tab a {
           text-decoration: none;
           
-         }
-         .tab-wrapper a {
+          }
+          .tab-wrapper a {
            color: #231f20;
            
-         }   
-         a {
-         color: #124673;
-         outline: none;
-         transition: .1s;
-         display: flex;
-         }
+          }   
+          a {
+          color: #124673;
+          outline: none;
+          transition: .1s;
+          display: flex;
+          }
           
-         .tab-content {
+          .tab-content {
             margin-top: 5px;
             text-align: center;
+            display: flex;
+           flex-direction: column;
+           justify-content: center; 
+           align-items: center;
             
-         }
-         .tab-results .inline-help-icons {
+          }
+
+          .tab-content div {
+           line-height: 1.1em;
+           padding: .1em 0; 
+          }
+          .tab-results .inline-help-icons {
             
             position: absolute;
             right: 5px;
             top: 0;
-         }
+          }
 
-         .glyph {
+          .glyph {
             direction: ltr;
-         }
+          } 
 
-         .tab-content .date,.tab-content div {
+          .tab-content .date,.tab-content div {
             line-height: 1.1em;
             padding: .1em 0;
-         }
+            justify-content: center;
+          }
 
-         .tab-day-short {
-            font-size: 1.4rem;
-            font-weight: 700;
-            padding-bottom: 0;
-         }
-
-         .tab.active .tab-content .weather {
-            border-left: 0;
-         }
-
-         .tab-content .weather.day {
+          .tab-content .weather.day {
             background: #88b7df;
-         }
+            justify-content: center;
+          }
 
-         .tab-content .weather {
+          .tab-content .weather {
             border-left: 1px solid #b2cbe6;
             direction: ltr;
             line-height: 1;
             position: relative;
-         }
+            justify-content: center;
+          }
 
-         .tab-content .weather-pictogram-wrapper.day {
+          .tab-content .weather-pictogram-wrapper.day {
             background: #88b7df;
-         }
+            justify-content: center;
+            width :100%
+          }
 
-         .tab-content .weather-pictogram-wrapper {
-            /*align-items: center;*/
-            
+          .tab-content .weather-pictogram-wrapper {
             align-self: center;
-            /*border-radius: 100%;*/
             box-sizing: border-box;
             display: flex;
             height: 75px;
             justify-content: center;
             margin: 0 auto;
             width: 100px;
-         }
+          }
 
-         img {
+          img {
             overflow: clip;
-         } 
-         .tab-content .weather-pictogram-wrapper-second .weather-pictogram {
-         width: 38px;
-         }
+            justify-content: center;
+          } 
+          .tab-content .weather-pictogram-wrapper-second .weather-pictogram {
+          width: 38px;
+          justify-content: center;
+          }
 
-         .tab-content .temps {
-         filter: saturate(.8);
+          .tab-content .temps {
+          filter: saturate(.8);
           padding-top: 0;
-         }
-         .tab-content .tab-temp-max {
-         border-radius: 5px;
-         color: transparent;
-         font-size: .9rem;
-         line-height: 1.4em;
-         margin: 5px auto;
-         width: 50px;
-         }
-         .tab-content .tab-temp-min {
+          justify-content: center;
+          }
+          .tab-content .tab-temp-max {
           border-radius: 5px;
           color: transparent;
           font-size: .9rem;
           line-height: 1.4em;
           margin: 5px auto;
           width: 50px;
+          justify-content: center;
+          }
+          .tab-content .tab-temp-min {
+          border-radius: 5px;
+          color: transparent;
+          font-size: .9rem;
+          line-height: 1.4em;
+          margin: 5px auto;
+          width: 50px;
+          justify-content: center;
+          }
+          .tab-content .data {
+          display: inline-block;
+          justify-content: center;
+          }
+          .tab-content .wind {
+          align-items: center;
+          border-radius: 5px;
+          display: flex;
+          height: 1.3em;
+          justify-content: center;
+          line-height: 1.4em;
+          margin: 0 auto 5px;
+          padding: 0 5px;
+          white-space: nowrap;
+          justify-content: center;
+          } 
+          .glyph.winddir.W:before {
+          content: "\00e004";
          }
-         .tab-content .data {
-         display: inline-block;
+          .glyph.winddir:before {
+          content: "\00e012";
          }
-         .tab-content .wind {
-         align-items: center;
-         border-radius: 5px;
-         display: flex;
-         height: 1.3em;
-         justify-content: center;
-         line-height: 1.4em;
-         margin: 0 auto 5px;
-         padding: 0 5px;
-         white-space: nowrap;
-         }
-         .tab-content .data .glyph {
-         min-width: 15px;
-         }
-         .wind .winddir {
-         margin-right: 4px;
-         margin-top: 2px;
-         }
-         .glyph {
-         direction: ltr;
-         }
-         .tab-content .tab-precip {
-         align-items: center;
-         border-radius: 5px;
-         display: flex;
-         height: 1.3em;
-         justify-content: center;
-         line-height: 1.4em;
-         margin: 0 auto 5px;
-         padding: 0 5px;
-         white-space: nowrap;
-         }
-         .tab-precip .rain {
-         color: #0f8eb4;
-         margin-right: 3px;
-         margin-top: 3px;
-         }
-
-        </style>
+          .glyph:before {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          display: inline-block;
+          font-family: meteoblue,sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 1;
+          position: relative;
+          text-decoration: none;
+          vertical-align: baseline;
+          }
+          .tab-content .data .glyph {
+          min-width: 15px;
+          justify-content: center;
+          }
+          .wind .winddir {
+          margin-right: 4px;
+          margin-top: 2px;
+          justify-content: center;
+          } 
+          .glyph {
+          direction: ltr;
+          
+          } 
+          .tab-content .tab-precip {
+          align-items: center;
+          border-radius: 5px;
+          display: flex;
+          height: 1.3em;
+          justify-content: center;
+          line-height: 1.4em;
+          margin: 0 auto 5px;
+          padding: 0 5px;
+          white-space: nowrap;
+          }
+          .tab-precip .rain {
+          color: #0f8eb4;
+          margin-right: 3px;
+          margin-top: 3px;
+          justify-content: center;
+          }
+          .icon {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          margin-right: 5px;
+          background-size: cover;
+          }  
+          .emoji{
+        
+           font-size: 20px; 
+          margin-right: 5px;
+          transition: transform 0.5s ease;
+           display: inline-block;
+           color: black;
+          }
+          .wind-icon {
+          transform-origin: center; 
+          } 
+          .day-of-week{
+          font-weight: bold;
+          }
+       </style>
     </head>
 
-     <body>
+   <body>
      <!-- Le contenu de l'en-tête -->
      <div class="header_lower">
         <header>
             <h1 itemprop="name" content="Montpellier" class="main-heading">Montpellier Météo</h1>
+            <h2>Occitanie, France</h2>
         </header>
      </div>
+     <div id="div-gpt-ad-1534153139004-0" class="adsbygoogle ad1" data-google-query-id="CMD8583pwYIDFXGxJwIdL4ED_g">
 
-     <!-- Affichage pour les 5 jours -->
-        <main class="main">
+     </div>
+     <!-- Affichage  des résultats pour les 4 jours dans la grille -->
+        
             <div class="grid">
                 <div id="tab_results" class="tab-results">
                   <div id="tab_wrapper" class="tab-wrapper">
 
                        <!--day 01-->
-                       <div id="day1" class="tab active first ">
+                       <div id="day1" class="tab tab-content  ">
                              <a href="/fr/meteo/semaine/montpellier_france_2992166?day=1" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=1" data-day="1">
                              
                               <!-- contenu du tableau-->
@@ -254,17 +307,16 @@
                                 <div id="inline_help" class="inline-help-icons">
                                     <span class="glyph help-solid"></span>
                                  </div>
-                                 <time datetime="2023-11-13" class="date">
-                                      <div class="tab-day-short">Lundi</div>
-                                 </time>
-                                 <div class="weather-pictogram-wrapper day">
-                                    <img class="weather-pictogram-wrapper day" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg">
-                                 </div>flex
+                                 <div id="dayOfWeek1" class="day-of-week"></div>
+                                 <time datetime="2023-11-13" class="date"></time>
+                                 <div class="weather-day">
+                                    <img class="weather-pictogram-wrapper day" id="weather-icon-day1" src="IMG/Images/summer-rain-vector-icon.jpg">
+                                 </div>
                             
                                  <div class="temps">
-                                     <div class="tab-temp-max" title="Température maximale" style="background-color: #D8F7A1; color: #000000"> 19&nbsp;°C </div>
-                                     <div class="tab-temp-min" title="Température minimale" style="background-color: #3CA12C; color: #FFFFFF"> 13&nbsp;°C </div>
-                                    </div>
+                                     <div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"> 19&nbsp;°C </div>
+                                     <div class="tab-temp-min" title="Température minimale" style="background-color: #79D030; color: #FFFFFF"> 13&nbsp;°C </div>
+                                 </div>
                          
                                  <div class="data">
                                       <div class="wind" title="Vitesse du vent">flex
@@ -272,32 +324,32 @@
                                                ::before
                                            </span>
                                      </div>
+                                      <div class="wind-icon emoji">➤</div>
                                        <div title="Quantité de précipitations" class="tab-precip">flex
-                                             <span class="glyph rain">
-                                              
-                                                " - "
-                                            </span>
-                                        </div>
+                                           <span class="glyph rain">
+                                             " - "
+                                          </span>
+                                      </div>
                                   </div>
+                                  <div class="emoji">💧</div>
                              </div>
                           </a>
                        </div>
                        
                        <!-- Jour 02-->
 
-                       <div id="day2" class="tab ">
+                       <div id="day2" class="tab  tab-content">
                            <a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=2" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=2">
                              <div class="tab-content">
                                     <div id="inline_help" class="inline-help-icons">
                                      <span class="glyph help-solid"></span>
                                      </div>
-                                 <time datetime="2023-11-14" class="date"> 
-                                     <div class="tab-day-short"> Mardi </div>
-                                 </time>
+                                     <div id="dayOfWeek2" class="day-of-week"></div>
+                                 <time datetime="2023-11-14" class="date"></time>
                                  <div class="weather day">
                                     <div class="weather-pictogram-wrapper day">
-                                        <img class="weather-pictogram" src="https://static.meteoblue.com/assets/images/picto/03_iday.svg">
-                                    </div>flex
+                                        <img class="weather-pictogram" id="weather-icon-day2"src="IMG/Images/OIP.jpg">
+                                    </div>
                                  </div>
                                  <div class="temps">
                                      <div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"> 23&nbsp;°C </div>
@@ -308,32 +360,35 @@
                                           <span class="glyph winddir W">
                                              ::before
                                          </span>
-                                              " 26 km/h "
-                                       </div>
+                                              
+                                       </div> 
+                                       <div class="wind-icon emoji">➤</div>
                                        <div title="Quantité de précipitations" class="tab-precip dry">flex
-                                           <span class="glyph rain"></span>
+                                           <span class="glyph rain"> </span>
                                                " - "
                                        </div>
                                   </div>
+                                  <div class="emoji">💧</div>
                               </div>
                             </a>
                      </div>  
                      
                               <!-- Jour 03-->
 
-                       <div id="day3"  class="tab    tab-before-active"  >
+                       <div id="day3"  class="tab  tab-content "  >
                         <a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=3" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=3">
                           <div class="tab-content">
                                  <div id="inline_help" class="inline-help-icons">
                                   <span class="glyph help-solid"></span>
                                   </div>
-                              <time datetime="2023-11-15" class="date"> 
-                                  <div class="tab-day-short"> Mercredi </div>
-                              </time>
+                                  <div id="dayOfWeek3" class="day-of-week"></div>
+                              <time datetime="2023-11-15" class="date"></time> 
+                                  
+                              
                               <div class="weather day">
                                     <div class="weather-pictogram-wrapper day">
-                                        <img class="weather-pictogram" src="https://static.meteoblue.com/assets/images/picto/02_iday.svg">
-                                    </div>flex
+                                        <img class="weather-pictogram" id="weather-icon-day3" src="IMG/Images/sun-vector-icon.jpg">
+                                    </div>
                               </div>
                               <div class="temps">
                                   <div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"> 23&nbsp;°C </div>
@@ -344,13 +399,15 @@
                                        <span class="glyph winddir W">
                                           ::before
                                       </span>
-                                           " 26 km/h "
+                                          
                                     </div>
+                                    <div class="wind-icon emoji">➤</div>
                                     <div title="Quantité de précipitations" class="tab-precip dry">flex
                                         <span class="glyph rain"></span>
                                             " - "
                                       </div>
-                                   </div>
+                                 </div>
+                                   <div class="emoji">💧</div>
                                </div>
                             </a>
                      </div>  
@@ -358,19 +415,21 @@
                      
                                    <!-- Jour 04-->
 
-                       <div id="day4" classe="tab active active-mobile"  >
+                       <div id="day4" class="tab tab-content"  >
                             <a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=4" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=4">
                               <div class="tab-content">
                                      <div id="inline_help" class="inline-help-icons">
                                          <span class="glyph help-solid"></span>
                                     </div>
+                                    <div id="dayOfWeek4" class="day-of-week"></div>
                                  <time datetime="2023-11-16" class="date"> 
                                      <div class="tab-day-short"> jeudi </div>
+                                     
                                  </time>
                                   <div class="weather day">
                                         <div class="weather-pictogram-wrapper day">
-                                          <img class="weather-pictogram" src="">
-                                        </div>flex
+                                          <img class="weather-pictogram" id="weather-icon-day4"src="IMG/Images/sun-vector-icon.jpg">
+                                        </div>
                                   </div>
                               <div class="temps">
                                   <div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"> 23&nbsp;°C </div>
@@ -383,140 +442,132 @@
                                       </span>
                                            " 26 km/h "
                                     </div>
+                                    <div class="wind-icon emoji">➤</div>
                                     <div title="Quantité de précipitations" class="tab-precip dry">flex
                                         <span class="glyph rain"></span>
                                             " - "
-                                      </div>
-                                   </div>
-                               </div>
-                            </a>
-                        </div>
-                     
-                        <!-- jour 5-->
-                       
-
-                     <div id="day2" class="tab   tab-after-active   ">
-                        <a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=5" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=5">
-                            <div class="tab-content">
-                                  <div id="inline_help" class="inline-help-icons">
-                                     <span class="glyph help-solid"></span>
-                                  </div>
-                             <time datetime="2023-11-17" class="date"> 
-                                  <div class="tab-day-short"> vendredi </div>
-                              </time>
-                             <div class="weather day">
-                                  <div class="weather-pictogram-wrapper day">
-                                      <img class="weather-pictogram" src="">
-                                  </div>flex
-                             </div>
-                             <div class="temps">
-                                <div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"> 23&nbsp;°C </div>
-                                <div class="tab-temp-min" title="Température minimale" style="background-color: #79D030; color: #000000"> 14&nbsp;°C </div>
-                             </div>
-                             <div class="data">
-                                 <div class="wind" title="Vitesse du vent">flex
-                                     <span class="glyph winddir W">
-                                        ::before
-                                     </span>
-                                         " 26 km/h "
-                                  </div>
-                                  <div title="Quantité de précipitations" class="tab-precip dry">flex
-                                      <span class="glyph rain"></span>
-                                          " - "
                                     </div>
-                                 </div>
-                             </div>
-                          </a>
-                      </div
-
-
-
-
-                  
-
-
-
-
+                              </div>
+                              <div class="emoji">💧</div>
+                           </div>
+                       
+                        </a>
+                  </div>
                      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                     </div>
-                </div>
+                        
+               </div>
             </div>
-        </main>
+         </div>
+        
+         <script>
+
+            // Fonction pour récupérer les données météorologiques depuis  l'API
+          function getWeatherData() {
+           const apiUrl = "https://api.open-meteo.com/v1/meteofrance?latitude=43.6109&longitude=3.8763&daily=temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max";
+            // récupérer les données avec fetch
+          fetch(apiUrl)
+                 .then(response => response.json())
+                 .then(data => {
+                     // Mettre à jour chaque tableau avec les données appropriées
+                     updateTab("day1", data.daily.time[0], data.daily.temperature_2m_max[0], data.daily.temperature_2m_min[0], data.daily.wind_speed_10m_max[0], data.daily.precipitation_sum[0]);
+                     updateTab("day2", data.daily.time[1], data.daily.temperature_2m_max[1], data.daily.temperature_2m_min[1], data.daily.wind_speed_10m_max[1], data.daily.precipitation_sum[1]);
+                     updateTab("day3", data.daily.time[2], data.daily.temperature_2m_max[2], data.daily.temperature_2m_min[2], data.daily.wind_speed_10m_max[2], data.daily.precipitation_sum[2]);
+                     updateTab("day4", data.daily.time[3], data.daily.temperature_2m_max[3], data.daily.temperature_2m_min[3], data.daily.wind_speed_10m_max[3], data.daily.precipitation_sum[3]);
+                     
+                 })
+                 .catch(error => console.error("Erreur lors de la récupération des données météorologiques", error));
+          }
+     
+           // Fonction pour mettre à jour le contenu des données météorologiques
+            function updateTab(tabId, date, maxTemp, minTemp, windDirection, precipitation) {
+             const tab = document.getElementById(tabId);
+             if (tab) {
+                 tab.querySelector(".date").textContent = date;
+                 tab.querySelector(".tab-temp-max").textContent = maxTemp + " °C";
+                 tab.querySelector(".tab-temp-min").textContent = minTemp + " °C";
+                 tab.querySelector(".wind").textContent = windDirection + " km/h";
+                 tab.querySelector(".tab-precip").textContent = precipitation + " mm";
+                 
+                 
+             }
+            }
+        
+            // Appeler la fonction pour récupérer et afficher les données météorologiques 
+           window.addEventListener("load", getWeatherData);
+         
+          // Fonction pour mettre à jour la rotation du vent 
+          document.addEventListener("DOMContentLoaded", function () {
+          //  les éléments avec la classe "wind-icon"
+           const windIcons = document.querySelectorAll('.wind-icon');
+
+           //  Une rotation Pour chaque icône du vent
+          windIcons.forEach(function (windIcon) {
+            // Définissez un angle de rotation 
+            const angleRotation = Math.floor(Math.random() * 360);
+
+            // Appliquez la rotation à chaque icône du vent
+            windIcon.style.transform = `rotate(${angleRotation}deg)`;
+           });
+          });
+           // Fonction pour définir les jours de semaine 
+          function updateDayOfWeek(dateString, dayOfWeekElementId) {
+          const daysOfWeek = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+          const currentDate = new Date(dateString);
+          const currentDayOfWeek = daysOfWeek[currentDate.getDay()];
+           const dayOfWeekElement = document.getElementById(dayOfWeekElementId);
+    
+           if (dayOfWeekElement) {
+            dayOfWeekElement.textContent = currentDayOfWeek;
+           }
+          }
+
+           // Appeler la fonction pour mettre à jour les jours de la semaine avec la date spécifiée
+            updateDayOfWeek("2023-11-16", "dayOfWeek1");
+            updateDayOfWeek("2023-11-17", "dayOfWeek2");
+            updateDayOfWeek("2023-11-18", "dayOfWeek3");
+            updateDayOfWeek("2023-11-19", "dayOfWeek4");
+
+          // Actualiser les jours de la semaine toutes les heures
+           setInterval(() => {
+          const currentDate = new Date(); //  la date actuelle
+          const formattedDate = currentDate.toISOString().split('T')[0]; 
+          updateDayOfWeek(formattedDate, "dayOfWeek1");
+          }, 3600000); // 3600000 millisecondes équivalent à 1 heure
+
+          // fonction pour définir le pictogram approprié       
+          function updateWeatherIcon(tabId, precipitation) {
+          const weatherIcon = document.getElementById(`weather-icon-${tabId}`);
+    
+        if (weatherIcon) {
+        // Définissez des seuils pour les précipitations 
+        const pluieThreshold = 0.2; 
+        const cielCouvertThreshold = 0.1; 
+
+        if (precipitation > pluieThreshold) {
+            // S'il y a beaucoup de précipitations
+            weatherIcon.src = 'IMG/Images/summer-rain-vector-icon.jpg';
+        } else if (precipitation > cielCouvertThreshold) {
+            // S'il y a des précipitations négligeables
+            weatherIcon.src = 'IMG/Images/OIP.jpg';
+        } else {
+            
+            weatherIcon.src = 'IMG/Images/sun-vector-icon.jpg';
+        }
+        }
+        }
+
+        // Appeler la fonction pour mettre à jour l'icône météorologique
+        updateWeatherIcon("day1", data.daily.precipitation_sum[0]);
+        updateWeatherIcon("day2", data.daily.precipitation_sum[1]);
+       updateWeatherIcon("day3", data.daily.precipitation_sum[2]);
+       updateWeatherIcon("day4", data.daily.precipitation_sum[3]);
+
+
+      </script>
+     
     </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="tab-content"></div>
 
 
 
