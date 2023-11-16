@@ -3,19 +3,19 @@
 ## Projet et but   
 
 l'Objectif de ce projet est de créer un site Web de prévision météorologiques Pour la ville de Montpellier. Affichant   principalement les températures hautes et basses ,  la moyenne du vent et la quantité de précipitation  pour les prochains quatre jours. 
-```
+```mermaid
 flowchart TD
-    A[Donnée API ] --> B[Température ]
-    B --> D[Temp Hautes]
-    B --> E[Temp Basses]
-    A --> C[Moy_vent ]
-    A --> F[Précipitations]
+    A[carte Montpellier ] --> B[Données Météo ]
+    B --> D[Température ]
+    D --> F[Température Haute]
+    D --> G[Température Basse]
+    B --> E[Moyenne du Vent]
+    B --> C[Précipitations]
 
-    E --> G[SiteWeb ]
-    D --> G
-    C --> G
-    F --> G
-
+    F --> H[Site Web Météo ]
+    G --> H
+    E --> H
+    C --> H
 ```
  le site web est visible dans ce lien .... 
  ## Aperçu du site web 
