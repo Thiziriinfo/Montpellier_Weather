@@ -1,7 +1,937 @@
 ---
-title: "Meteo_Montp"
+title: "Météo_Montp"
 ---
 
-This is a Quarto website.
+Bienvenue sur le site des provisions météorologiques de la ville de Montpellier , région Occitanie.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Montpellier_Weather - Météo Montpellier</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Montpellier_Weather</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Météo Montpellier</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+&lt;!DOCTYPE html&gt;
+
+<pre><code>&lt;head&gt;
+      &lt;meta charset="UTF-8"&gt;
+      &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;&lt;!--commande pour les icones --&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+      &lt;title&gt;Météo_Montpellier&lt;/title&gt;
+
+
+
+   &lt;style&gt;
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(73, 16, 127);
+        background-image: url('IMG/Images/shutterstock_240459751.webp');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-family: Arial, sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+      .header_lower {
+        background-color: bleuviolet ;
+        color: #fff;
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+      }
+
+      h1.main-heading {
+        margin: 0;
+      }
+     
+     
+      .ad1 {
+      height: 100px;
+      width: 100%;
+      background-color: #124673;
+      }
+     
+
+
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-bottom: .5em;
+        padding-bottom: 1em;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(210, 208, 204);
+     
+     }
+      .tab-results {
+        margin-top: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .tab-wrapper {
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      .tab {
+      background: #ebebeb;
+      box-sizing: border-box;
+      display: flex;
+      position: relative;
+      transition: .1s;
+      vertical-align: top;
+      width: 25%;
+      flex-grow: 1;
+      border-bottom: 1px solid #ccc;
+      border-right: 3px solid #124673; 
+      
+      }
+      
+      .tab a {
+      text-decoration: none;
+      
+      }
+      .tab-wrapper a {
+       color: #231f20;
+       
+      }   
+      a {
+      color: #124673;
+      outline: none;
+      transition: .1s;
+      display: flex;
+      }
+      
+      .tab-content {
+        margin-top: 5px;
+        text-align: center;
+        display: flex;
+       flex-direction: column;
+       justify-content: center; 
+       align-items: center;
+        
+      }
+
+      .tab-content div {
+       line-height: 1.1em;
+       padding: .1em 0; 
+      }
+      .tab-results .inline-help-icons {
+        
+        position: absolute;
+        right: 5px;
+        top: 0;
+      }
+
+      .glyph {
+        direction: ltr;
+      } 
+
+      .tab-content .date,.tab-content div {
+        line-height: 1.1em;
+        padding: .1em 0;
+        justify-content: center;
+      }
+
+      .tab-content .weather.day {
+        background: #88b7df;
+        justify-content: center;
+      }
+
+      .tab-content .weather {
+        border-left: 1px solid #b2cbe6;
+        direction: ltr;
+        line-height: 1;
+        position: relative;
+        justify-content: center;
+      }
+
+      .tab-content .weather-pictogram-wrapper.day {
+        background: #88b7df;
+        justify-content: center;
+        width :100%
+      }
+
+      .tab-content .weather-pictogram-wrapper {
+        align-self: center;
+        box-sizing: border-box;
+        display: flex;
+        height: 75px;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100px;
+      }
+
+      img {
+        overflow: clip;
+        justify-content: center;
+      } 
+      .tab-content .weather-pictogram-wrapper-second .weather-pictogram {
+      width: 38px;
+      justify-content: center;
+      }
+
+      .tab-content .temps {
+      filter: saturate(.8);
+      padding-top: 0;
+      justify-content: center;
+      }
+      .tab-content .tab-temp-max {
+      border-radius: 5px;
+      color: transparent;
+      font-size: .9rem;
+      line-height: 1.4em;
+      margin: 5px auto;
+      width: 50px;
+      justify-content: center;
+      }
+      .tab-content .tab-temp-min {
+      border-radius: 5px;
+      color: transparent;
+      font-size: .9rem;
+      line-height: 1.4em;
+      margin: 5px auto;
+      width: 50px;
+      justify-content: center;
+      }
+      .tab-content .data {
+      display: inline-block;
+      justify-content: center;
+      }
+      .tab-content .wind {
+      align-items: center;
+      border-radius: 5px;
+      display: flex;
+      height: 1.3em;
+      justify-content: center;
+      line-height: 1.4em;
+      margin: 0 auto 5px;
+      padding: 0 5px;
+      white-space: nowrap;
+      justify-content: center;
+      } 
+      .glyph.winddir.W:before {
+      content: "\00e004";
+     }
+      .glyph.winddir:before {
+      content: "\00e012";
+     }
+      .glyph:before {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      display: inline-block;
+      font-family: meteoblue,sans-serif;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1;
+      position: relative;
+      text-decoration: none;
+      vertical-align: baseline;
+      }
+      .tab-content .data .glyph {
+      min-width: 15px;
+      justify-content: center;
+      }
+      .wind .winddir {
+      margin-right: 4px;
+      margin-top: 2px;
+      justify-content: center;
+      } 
+      .glyph {
+      direction: ltr;
+      
+      } 
+      .tab-content .tab-precip {
+      align-items: center;
+      border-radius: 5px;
+      display: flex;
+      height: 1.3em;
+      justify-content: center;
+      line-height: 1.4em;
+      margin: 0 auto 5px;
+      padding: 0 5px;
+      white-space: nowrap;
+      }
+      .tab-precip .rain {
+      color: #0f8eb4;
+      margin-right: 3px;
+      margin-top: 3px;
+      justify-content: center;
+      }
+      .icon {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      background-size: cover;
+      }  
+      .emoji{
+    
+       font-size: 20px; 
+      margin-right: 5px;
+      transition: transform 0.5s ease;
+       display: inline-block;
+       color: black;
+      }
+      .wind-icon {
+      transform-origin: center; 
+      } 
+      .day-of-week{
+      font-weight: bold;
+      }
+   &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+
+<!-- Le contenu de l'en-tête -->
+<div class="header_lower">
+<pre><code>    &lt;header&gt;
+        &lt;h1 itemprop="name" content="Montpellier" class="main-heading"&gt;Montpellier Météo&lt;/h1&gt;
+        &lt;h2&gt;Occitanie, France&lt;/h2&gt;
+    &lt;/header&gt;
+ &lt;/div&gt;
+ &lt;div id="div-gpt-ad-1534153139004-0" class="adsbygoogle ad1" data-google-query-id="CMD8583pwYIDFXGxJwIdL4ED_g"&gt;
+
+ &lt;/div&gt;
+ &lt;!-- Affichage  des résultats pour les 4 jours dans la grille --&gt;
+    
+        &lt;div class="grid"&gt;
+            &lt;div id="tab_results" class="tab-results"&gt;
+              &lt;div id="tab_wrapper" class="tab-wrapper"&gt;
+
+                   &lt;!--day 01--&gt;
+                   &lt;div id="day1" class="tab tab-content  "&gt;
+                         &lt;a href="/fr/meteo/semaine/montpellier_france_2992166?day=1" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=1" data-day="1"&gt;
+                         
+                          &lt;!-- contenu du tableau--&gt;
+                         &lt;div class="tab-content"&gt;
+                            &lt;div id="inline_help" class="inline-help-icons"&gt;
+                                &lt;span class="glyph help-solid"&gt;&lt;/span&gt;
+                             &lt;/div&gt;
+                             &lt;div id="dayOfWeek1" class="day-of-week"&gt;&lt;/div&gt;
+                             &lt;time datetime="2023-11-13" class="date"&gt;&lt;/time&gt;
+                             &lt;div class="weather-day"&gt;
+                                &lt;img class="weather-pictogram-wrapper day" id="weather-icon-day1" src="IMG/Images/16_iday.svg"&gt;
+                             &lt;/div&gt;
+                        
+                             &lt;div class="temps"&gt;
+                                 &lt;div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"&gt; 19&amp;nbsp;°C &lt;/div&gt;
+                                 &lt;div class="tab-temp-min" title="Température minimale" style="background-color: #79D030; color: #FFFFFF"&gt; 13&amp;nbsp;°C &lt;/div&gt;
+                             &lt;/div&gt;
+                     
+                             &lt;div class="data"&gt;
+                                  &lt;div class="wind" title="Vitesse du vent"&gt;flex
+                                       &lt;span class="glyph winddir W"&gt;
+                                           ::before
+                                       &lt;/span&gt;
+                                 &lt;/div&gt;
+                                  &lt;div class="wind-icon emoji"&gt;➤&lt;/div&gt;
+                                   &lt;div title="Quantité de précipitations" class="tab-precip"&gt;flex
+                                       &lt;span class="glyph rain"&gt;
+                                         " - "
+                                      &lt;/span&gt;
+                                  &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="emoji"&gt;💧&lt;/div&gt;
+                         &lt;/div&gt;
+                      &lt;/a&gt;
+                   &lt;/div&gt;
+                   
+                   &lt;!-- Jour 02--&gt;
+
+                   &lt;div id="day2" class="tab  tab-content"&gt;
+                       &lt;a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=2" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=2"&gt;
+                         &lt;div class="tab-content"&gt;
+                                &lt;div id="inline_help" class="inline-help-icons"&gt;
+                                 &lt;span class="glyph help-solid"&gt;&lt;/span&gt;
+                                 &lt;/div&gt;
+                                 &lt;div id="dayOfWeek2" class="day-of-week"&gt;&lt;/div&gt;
+                             &lt;time datetime="2023-11-14" class="date"&gt;&lt;/time&gt;
+                             &lt;div class="weather day"&gt;
+                                &lt;div class="weather-pictogram-wrapper day"&gt;
+                                    &lt;img class="weather-pictogram" id="weather-icon-day2"src="IMG/Images/02_iday.svg"&gt;
+                                &lt;/div&gt;
+                             &lt;/div&gt;
+                             &lt;div class="temps"&gt;
+                                 &lt;div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"&gt; 23&amp;nbsp;°C &lt;/div&gt;
+                                 &lt;div class="tab-temp-min" title="Température minimale" style="background-color: #79D030; color: #000000"&gt; 14&amp;nbsp;°C &lt;/div&gt;
+                             &lt;/div&gt;
+                             &lt;div class="data"&gt;
+                                  &lt;div class="wind" title="Vitesse du vent"&gt;flex
+                                      &lt;span class="glyph winddir W"&gt;
+                                         ::before
+                                     &lt;/span&gt;
+                                          
+                                   &lt;/div&gt; 
+                                   &lt;div class="wind-icon emoji"&gt;➤&lt;/div&gt;
+                                   &lt;div title="Quantité de précipitations" class="tab-precip dry"&gt;flex
+                                       &lt;span class="glyph rain"&gt; &lt;/span&gt;
+                                           " - "
+                                   &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class="emoji"&gt;💧&lt;/div&gt;
+                          &lt;/div&gt;
+                        &lt;/a&gt;
+                 &lt;/div&gt;  
+                 
+                          &lt;!-- Jour 03--&gt;
+
+                   &lt;div id="day3"  class="tab  tab-content "  &gt;
+                    &lt;a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=3" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=3"&gt;
+                      &lt;div class="tab-content"&gt;
+                             &lt;div id="inline_help" class="inline-help-icons"&gt;
+                              &lt;span class="glyph help-solid"&gt;&lt;/span&gt;
+                              &lt;/div&gt;
+                              &lt;div id="dayOfWeek3" class="day-of-week"&gt;&lt;/div&gt;
+                          &lt;time datetime="2023-11-15" class="date"&gt;&lt;/time&gt; 
+                              
+                          
+                          &lt;div class="weather day"&gt;
+                                &lt;div class="weather-pictogram-wrapper day"&gt;
+                                    &lt;img class="weather-pictogram" id="weather-icon-day3" src="IMG/Images/01_iday.svg"&gt;
+                                &lt;/div&gt;
+                          &lt;/div&gt;
+                          &lt;div class="temps"&gt;
+                              &lt;div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"&gt; 23&amp;nbsp;°C &lt;/div&gt;
+                              &lt;div class="tab-temp-min" title="Température minimale" style="background-color: #79D030; color: #000000"&gt; 14&amp;nbsp;°C &lt;/div&gt;
+                          &lt;/div&gt;
+                          &lt;div class="data"&gt;
+                               &lt;div class="wind" title="Vitesse du vent"&gt;flex
+                                   &lt;span class="glyph winddir W"&gt;
+                                      ::before
+                                  &lt;/span&gt;
+                                      
+                                &lt;/div&gt;
+                                &lt;div class="wind-icon emoji"&gt;➤&lt;/div&gt;
+                                &lt;div title="Quantité de précipitations" class="tab-precip dry"&gt;flex
+                                    &lt;span class="glyph rain"&gt;&lt;/span&gt;
+                                        " - "
+                                  &lt;/div&gt;
+                             &lt;/div&gt;
+                               &lt;div class="emoji"&gt;💧&lt;/div&gt;
+                           &lt;/div&gt;
+                        &lt;/a&gt;
+                 &lt;/div&gt;  
+                            
+                 
+                               &lt;!-- Jour 04--&gt;
+
+                   &lt;div id="day4" class="tab tab-content"  &gt;
+                        &lt;a rel="nofollow" href="/fr/meteo/semaine/montpellier_france_2992166?day=4" data-mobile="/fr/meteo/semaine/oneday/montpellier_france_2992166?day=4"&gt;
+                          &lt;div class="tab-content"&gt;
+                                 &lt;div id="inline_help" class="inline-help-icons"&gt;
+                                     &lt;span class="glyph help-solid"&gt;&lt;/span&gt;
+                                &lt;/div&gt;
+                                &lt;div id="dayOfWeek4" class="day-of-week"&gt;&lt;/div&gt;
+                             &lt;time datetime="2023-11-16" class="date"&gt; 
+                                 &lt;div class="tab-day-short"&gt; jeudi &lt;/div&gt;
+                                 
+                             &lt;/time&gt;
+                              &lt;div class="weather day"&gt;
+                                    &lt;div class="weather-pictogram-wrapper day"&gt;
+                                      &lt;img class="weather-pictogram" id="weather-icon-day4"src="IMG/Images/01_iday.svg"&gt;
+                                    &lt;/div&gt;
+                              &lt;/div&gt;
+                          &lt;div class="temps"&gt;
+                              &lt;div class="tab-temp-max" title="Température maximale" style="background-color: #F8DF0B; color: #000000"&gt; 23&amp;nbsp;°C &lt;/div&gt;
+                              &lt;div class="tab-temp-min" title="Température minimale" style="background-color: #79D030; color: #000000"&gt; 14&amp;nbsp;°C &lt;/div&gt;
+                          &lt;/div&gt;
+                          &lt;div class="data"&gt;
+                               &lt;div class="wind" title="Vitesse du vent"&gt;flex
+                                   &lt;span class="glyph winddir W"&gt;
+                                      ::before
+                                  &lt;/span&gt;
+                                       " 26 km/h "
+                                &lt;/div&gt;
+                                &lt;div class="wind-icon emoji"&gt;➤&lt;/div&gt;
+                                &lt;div title="Quantité de précipitations" class="tab-precip dry"&gt;flex
+                                    &lt;span class="glyph rain"&gt;&lt;/span&gt;
+                                        " - "
+                                &lt;/div&gt;
+                          &lt;/div&gt;
+                          &lt;div class="emoji"&gt;💧&lt;/div&gt;
+                       &lt;/div&gt;
+                   
+                    &lt;/a&gt;
+              &lt;/div&gt;
+                 
+                    
+           &lt;/div&gt;
+        &lt;/div&gt;
+     &lt;/div&gt;
+    
+     &lt;script&gt;
+
+        // Fonction pour récupérer les données météorologiques depuis  l'API
+      function getWeatherData() {
+       const apiUrl = "https://api.open-meteo.com/v1/meteofrance?latitude=43.6109&amp;longitude=3.8763&amp;daily=temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max";
+        // récupérer les données avec fetch
+      fetch(apiUrl)
+             .then(response =&gt; response.json())
+             .then(data =&gt; {
+                 // Mettre à jour chaque tableau avec les données appropriées
+                 updateTab("day1", data.daily.time[0], data.daily.temperature_2m_max[0], data.daily.temperature_2m_min[0], data.daily.wind_speed_10m_max[0], data.daily.precipitation_sum[0]);
+                 updateTab("day2", data.daily.time[1], data.daily.temperature_2m_max[1], data.daily.temperature_2m_min[1], data.daily.wind_speed_10m_max[1], data.daily.precipitation_sum[1]);
+                 updateTab("day3", data.daily.time[2], data.daily.temperature_2m_max[2], data.daily.temperature_2m_min[2], data.daily.wind_speed_10m_max[2], data.daily.precipitation_sum[2]);
+                 updateTab("day4", data.daily.time[3], data.daily.temperature_2m_max[3], data.daily.temperature_2m_min[3], data.daily.wind_speed_10m_max[3], data.daily.precipitation_sum[3]);
+                 
+             })
+             .catch(error =&gt; console.error("Erreur lors de la récupération des données météorologiques", error));
+      }
+ 
+       // Fonction pour mettre à jour le contenu des données météorologiques
+        function updateTab(tabId, date, maxTemp, minTemp, windDirection, precipitation) {
+         const tab = document.getElementById(tabId);
+         if (tab) {
+             tab.querySelector(".date").textContent = date;
+             tab.querySelector(".tab-temp-max").textContent = maxTemp + " °C";
+             tab.querySelector(".tab-temp-min").textContent = minTemp + " °C";
+             tab.querySelector(".wind").textContent = windDirection + " km/h";
+             tab.querySelector(".tab-precip").textContent = precipitation + " mm";
+             
+             
+         }
+        }
+    
+        // Appeler la fonction pour récupérer et afficher les données météorologiques 
+       window.addEventListener("load", getWeatherData);
+     
+      // Fonction pour mettre à jour la rotation du vent 
+      document.addEventListener("DOMContentLoaded", function () {
+      //  les éléments avec la classe "wind-icon"
+       const windIcons = document.querySelectorAll('.wind-icon');
+
+       //  Une rotation Pour chaque icône du vent
+      windIcons.forEach(function (windIcon) {
+        // Définissez un angle de rotation 
+        const angleRotation = Math.floor(Math.random() * 360);
+
+        // Appliquez la rotation à chaque icône du vent
+        windIcon.style.transform = `rotate(${angleRotation}deg)`;
+       });
+      });
+       // Fonction pour définir les jours de semaine 
+      function updateDayOfWeek(dateString, dayOfWeekElementId) {
+      const daysOfWeek = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+      const currentDate = new Date(dateString);
+      const currentDayOfWeek = daysOfWeek[currentDate.getDay()];
+       const dayOfWeekElement = document.getElementById(dayOfWeekElementId);
+
+       if (dayOfWeekElement) {
+        dayOfWeekElement.textContent = currentDayOfWeek;
+       }
+      }
+
+       // Appeler la fonction pour mettre à jour les jours de la semaine avec la date spécifiée
+        updateDayOfWeek("2023-11-16", "dayOfWeek1");
+        updateDayOfWeek("2023-11-17", "dayOfWeek2");
+        updateDayOfWeek("2023-11-18", "dayOfWeek3");
+        updateDayOfWeek("2023-11-19", "dayOfWeek4");
+
+      // Actualiser les jours de la semaine toutes les heures
+       setInterval(() =&gt; {
+      const currentDate = new Date(); //  la date actuelle
+      const formattedDate = currentDate.toISOString().split('T')[0]; 
+      updateDayOfWeek(formattedDate, "dayOfWeek1");
+      }, 3600000); // 3600000 millisecondes équivalent à 1 heure
+
+      // fonction pour définir le pictogram approprié       
+      function updateWeatherIcon(tabId, precipitation) {
+      const weatherIcon = document.getElementById(`weather-icon-${tabId}`);
+
+    if (weatherIcon) {
+    // Définissez des seuils pour les précipitations 
+    const pluieThreshold = 0.2; 
+    const cielCouvertThreshold = 0.1; 
+
+    if (precipitation &gt; pluieThreshold) {
+        // S'il y a beaucoup de précipitations
+        weatherIcon.src = 'IMG/Images/16_iday.svg';
+    } else if (precipitation &gt; cielCouvertThreshold) {
+        // S'il y a des précipitations négligeables
+        weatherIcon.src = 'IMG/Images/02_iday.svg';
+    } else {
+        
+        weatherIcon.src = 'IMG/Images/01_iday.svg';
+    }
+    }
+    }
+
+    // Appeler la fonction pour mettre à jour l'icône météorologique
+    updateWeatherIcon("day1", data.daily.precipitation_sum[0]);
+    updateWeatherIcon("day2", data.daily.precipitation_sum[1]);
+   updateWeatherIcon("day3", data.daily.precipitation_sum[2]);
+   updateWeatherIcon("day4", data.daily.precipitation_sum[3]);
+
+
+  &lt;/script&gt;
+ 
+&lt;/body&gt;</code></pre>
+
+
+
+
+</div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
+
