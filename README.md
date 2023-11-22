@@ -1,1 +1,0 @@
-# Thiziriinfoo.github.io
