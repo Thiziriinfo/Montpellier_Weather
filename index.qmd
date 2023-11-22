@@ -1,7 +1,12 @@
 ---
-title: "Meteo_Montp"
+title: "Site Météo"
 ---
 
+<<<<<<< HEAD
+=======
+Bienvenue sur le site des provisions météorologiques de la ville de Montpellier , région Occitanie.
+```{html}
+>>>>>>> bc67821f0a7ddd050f9aac3a9e73613f00b24d64
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
@@ -932,3 +937,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 </body></html>
+<<<<<<< HEAD
+=======
+```{html}
+>>>>>>> bc67821f0a7ddd050f9aac3a9e73613f00b24d64
