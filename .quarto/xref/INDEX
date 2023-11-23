@@ -10,5 +10,17 @@
   },
   "about.qmd": {
     "about.html": "faaad049"
+  },
+  "Meteo.qmd": {
+    "Meteo.html": "c2fcf98a"
+  },
+  "docs/meteo.qmd": {
+    "meteo.html": "656b1cf8"
+  },
+  "meteoo.qmd": {
+    "meteoo.html": "6a701156"
+  },
+  "meteo.qmd": {
+    "meteo.html": "15a33d39"
   }
 }

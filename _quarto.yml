@@ -1,14 +1,14 @@
 
 project:
   type: website
-
+  output-dir: docs
 website:
   title: "Meteo_Montp"
   navbar:
     left:
-      - href: index.qmd
+      - href: meteo.qmd
         text: Home
-      - about.qmd
+      
 
 format:
   html:
