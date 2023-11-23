@@ -6,7 +6,7 @@ website:
   title: "Meteo_Montp"
   navbar:
     left:
-      - href: meteo.qmd
+      - href: meteoo.qmd
         text: Home
       
 
