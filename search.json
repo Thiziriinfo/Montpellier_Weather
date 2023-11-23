@@ -1,9 +1,0 @@
-[
-  {
-    "objectID": "Meteo.html",
-    "href": "Meteo.html",
-    "title": "Site Météo",
-    "section": "",
-    "text": "&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD  =======\n```html &lt;!DOCTYPE html&gt;\n\n\n\n\n  &lt;meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"&gt;\n  &lt;title&gt;Météo_Montpellier&lt;/title&gt;\n\n\n&lt;header&gt;\n    &lt;h1 itemprop=\"name\" content=\"Montpellier\" class=\"main-heading\"&gt;Montpellier Météo&lt;/h1&gt;\n    &lt;h2&gt;Occitanie, France&lt;/h2&gt;\n&lt;/header&gt;"
-  }
-]
