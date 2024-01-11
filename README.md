@@ -1,6 +1,5 @@
 # Montpellier-Weather
-## Lien 
-le site web est visible ici:https://thiziriinfo.github.io/Thiziriinfoo.github.io/
+
 ## Projet et but   
 
 l'Objectif de ce projet est de créer un site Web de prévision météorologiques Pour la ville de Montpellier. Affichant   principalement les températures hautes et basses ,  la moyenne du vent et la quantité de précipitation  pour les prochains quatre jours. 
